@@ -1,6 +1,3 @@
-"use client";
-export const dynamic = "force-dynamic";
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -8,6 +5,9 @@ import { CartProvider } from "@/context/CartContext";
 import { ConvexClientProvider } from "@/lib/convex-provider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+// Force dynamic rendering to prevent prerender errors on build
+export const dynamic = "force-dynamic";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
