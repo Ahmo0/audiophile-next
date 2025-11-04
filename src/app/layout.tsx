@@ -1,3 +1,6 @@
+"use client";
+export const dynamic = "force-dynamic";
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -18,7 +21,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Audiophile - Premium Audio Equipment",
-  description: "Experience premium audio with Audiophile's collection of headphones, speakers, and earphones",
+  description:
+    "Experience premium audio with Audiophile's collection of headphones, speakers, and earphones",
 };
 
 export default function RootLayout({
@@ -34,9 +38,7 @@ export default function RootLayout({
         <ConvexClientProvider>
           <CartProvider>
             <Header />
-            <main className="min-h-screen">
-              {children}
-            </main>
+            <main className="min-h-screen">{children}</main>
             <Footer />
           </CartProvider>
         </ConvexClientProvider>
